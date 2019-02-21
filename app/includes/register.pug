@@ -1,0 +1,35 @@
+.dialog-backdrop.hide
+  #confetti-holder
+  #resume-dialog.dialog
+    .hexagon
+      i.far.fa-file-alt
+      svg(viewBox='0 20 300 260'): polygon(points='300,150 225,280 75,280 0,150 75,20 225,20')
+    h2 Almost Finished...
+    p Upload your resume so we can help connect you to future employers and internship oppertunities.
+    form#register-form
+      .file-drop
+        input(name='access_token' type='text')
+        input#file-drop(name='resume', type='file', accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,.pdf,application/pdf")
+        p.title Please Attach Resume....
+        p.italic.subtitle (Click me to upload...) 
+      button.outline Attend HackWCU
+      .progress.hide: .bar.circuit
+  #welcome-dialog.dialog.hide
+    .hexagon
+      i.fas.fa-award
+      svg(viewBox='0 20 300 260'): polygon(points='300,150 225,280 75,280 0,150 75,20 225,20')
+    h2 Welcome to HackWCU!
+    p: strong A Few things you can do...
+    br
+    p Add the event to google calendar
+    .calendar
+      a.button.outline(href='http://www.google.com/calendar/event?action=TEMPLATE&dates=20190330T160000Z%2F20190331T210000Z&text=HackWCU&location=50%20Sharpless%20St%2C%20West%20Chester%2C%20PA%2019383&details=Location%3A%20Business%20%26%20Public%20Management%20Building%0AWebsite%3A%20hackwcu.org' target='_blank')
+        i.fab.fa-google
+        | Google
+      a.button.outline(href='files/HackWCU 2019.ics' target='_blank')
+        i.fas.fa-calendar
+        | iCal/Outlook
+    br
+    p Share the event on social media
+    include socialmedia
+    button.outline Close

@@ -1,0 +1,40 @@
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  position: relative;
+  background-color: $purple;
+  height: 100%;
+  padding: 20px;
+  min-height: 150px;
+
+  @include md {
+    margin-top: 50px;
+    min-height: 325px;
+  }
+
+  p {
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .bar-horizontal {
+    top: 0;
+  }
+
+  .ram {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 410px;
+    @extend .hide-sm;
+  }
+
+  .icon {
+    font-size: 3em;
+    padding: 10px 20px;
+    color: white;
+  }
+}

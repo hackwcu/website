@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'), url('../fonts/open-sans-regular.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face {
+  font-family: 'Loew Heavy';
+  src: url('../fonts/loew-heavy.eot');
+  src: url('../fonts/loew-heavy.eot?#iefix') format('embedded-opentype'), url('../fonts/loew-heavy.woff2') format('woff2'), url('../fonts/loew-heavy.woff') format('woff'), url('../fonts/loew-heavy.ttf') format('truetype');
+}
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');
+
+@import url('https://use.fontawesome.com/releases/v5.7.2/css/all.css');
+
+* {
+  font-family: 'Roboto', sans-serif;
+}

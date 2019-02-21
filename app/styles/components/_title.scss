@@ -1,0 +1,49 @@
+.title {
+  position: relative;
+  margin-bottom: 75px;
+  margin-left: -20px;
+  margin-right: -20px;
+
+  @include md {
+    margin-bottom: 150px;
+  }
+
+  %text-format {
+    color: white;
+    text-align: center;
+    position: relative;
+    font-family: 'Loew Heavy';
+    font-size: 3em;
+  }
+
+  h2 {
+    @extend %text-format;
+    z-index: 4;
+  }
+
+  .shadow {
+    @include center-xy();
+    @extend %text-format;
+    z-index: 3;
+    width: 100%;
+    margin: 0;
+    color: transparent;
+    text-shadow: -8px 4px rgba(black, .18);
+    mix-blend-mode: multiply;
+  }
+
+  img {
+    @include center-xy();
+    width: 22em;
+    z-index: 2;
+  }
+
+  .glow {
+    @include center-xy();
+    z-index: 1;
+    height: 400px;
+    width: 400px;
+    background-image: radial-gradient(ellipse closest-side, rgba(white, 1) 0%, rgba(white,0.65) 40%, rgba(white,0.25) 65%, rgba(white,0.1) 85%, rgba(white,0) 100%);
+    mix-blend-mode: overlay;
+  }
+}

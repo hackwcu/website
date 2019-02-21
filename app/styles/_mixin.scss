@@ -1,0 +1,35 @@
+@mixin gradient() {
+  background-color: #ff8300; // Old browsers
+  background-image: linear-gradient(90deg, $dark-gold 0%,$light-gold 40%,$light-gold 60%,$dark-gold 100%);
+}
+
+@mixin center-xy() {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+@mixin center-y() {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin md {
+  $breakpoint: nth($flexboxgrid-breakpoints, 2);
+  $size: nth($breakpoint, 2);
+
+  @media (min-width: $size) {
+    @content;
+  }
+}
+
+@mixin sm {
+  $breakpoint: nth($flexboxgrid-breakpoints, 1);
+  $size: nth($breakpoint, 2);
+
+  @media (max-width: $size) {
+    @content;
+  }
+}

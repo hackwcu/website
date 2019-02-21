@@ -1,0 +1,106 @@
+.header-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  height: 100vh;
+  min-height: 680px;  
+  padding: 0 20px;
+  
+  background-color: $purple;
+  color: white;
+
+  @include sm {
+    min-height: initial;
+
+    img {
+      width: 12em !important;
+    }
+
+    h1 {
+      font-size: 4em !important;
+    }
+
+    h3, .gold {
+      margin-top: 0.25em;
+    }
+  }
+
+  .row {
+    height: 100%;
+  }
+
+  h1 {
+    font-family: 'Loew Heavy';
+    font-size: 5em;
+    line-height: 1em;
+    margin: 0.25em 0 0 0;
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 1.5em;
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  p {
+    font-weight: 100;
+    margin-top: 0;
+    text-align: center;
+    font-size: 1em;
+    text-align: center;
+
+     a {
+        color: white !important;
+        text-decoration: none;
+     }
+  }
+
+  button, .button {
+    max-width: 8.5em;
+  }
+
+  .powered {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: $dark-gold;
+    height: 18px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .title-side {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .logo {
+      width: 14em;
+    }
+  }
+
+  .overview-side {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    .wcu-wrapper {
+      display: relative;
+      flex: 1;
+    }
+    
+    .wcu {
+      @include center-xy();
+      width: 135%;
+      z-index: 0;
+      @-moz-document url-prefix() {
+        box-shadow: #5c1b62 0 0 50px 50px;
+      }
+    }
+  }
+}

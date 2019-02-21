@@ -1,0 +1,19 @@
+mixin title(text, img_id)
+  - var wrapped_text = '< ' + text + ' />';
+  header.title
+    h2 #{wrapped_text}
+    span.shadow #{wrapped_text}
+    img(src='images/title-background-' + img_id + '.png')
+    div.glow
+
+mixin fa(icon, url, prefix, target)
+  a(href=url, target=target)
+    i(class='icon fa' + prefix + ' fa-' + icon)
+
+mixin fab(icon, url, target='_blank')
+  +fa(icon, url, 'b', target)
+
+mixin fas(icon, url, target='_blank')
+  +fa(icon, url, 's', target)
+
+  

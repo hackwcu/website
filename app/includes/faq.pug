@@ -1,0 +1,46 @@
+mixin list_item(title)
+  li.col-xs-12.col-md-6
+    input(type='checkbox', checked='')
+    img(src='images/arrow.png').arrow
+    h3 #{title}
+    p: block
+
+section.faq
+  +title('FAQ', 3)
+  .content: ul.row
+    +list_item('What is a “hackathon”?')
+      | Think of a hackathon as an invention marathon. Over the span of 1-2 days, these events bring together student programmers, designers, and more to learn, build, and share cool new technology applications. Many universities host these events annually, providing a venue for students from different schools and backgrounds to work in teams to build these platforms from scratch.
+    +list_item('Who can attend?')
+      | Anyone over the age of 18 attend. Minors may be permitted on a case by case basis; reach out to us for details.
+    +list_item('How much will it cost?')
+      | HackWCU is a completely free event 
+      strong registration required!
+      |  Food, drinks, and awesome swag are completely free of charge!
+    +list_item('When and where is this event?')
+      | Saturday March 30
+      sup th
+      |  to Sunday March 31
+      sup st
+      |  , 2019 in the 
+      a(href='https://goo.gl/maps/4iLyFn7rrp12' target='_blank') Business and Public Management Center
+    +list_item('Will there travel reimbursement?')
+      | Unfortunately, we will not be offering any form of travel reimbursements for this event.
+    +list_item('Can I come even if I can’t code?')
+      | We will have Intro to coding workshops and much more. Mentors will also be available to help you learn and build something cool!
+    +list_item('What if I don’t have a team?')
+      | You could build something by yourself, or you could join one of our team-formation sessions to find people you want to work with. There will be a lot of others in your situation, and we’ll help with that.
+    +list_item('What should I bring?')
+      | You should bring some form of identification (driver’s license, school ID card, etc.), laptops, phones, chargers, anything you need to hack with. We also recommend that you a pillow, a sleeping bag or blanket, and toiletries.
+    +list_item('What I shouldn’t bring?')
+      | Please do not bring any power tools, weapons, drugs, or alcohol. Any participant found to be in possession of anything dangerous or illegal will be disqualified from the competition and will have to leave.
+    +list_item('Is there a Code of Conduct?')
+      | Yes! Hackers are expected to adhere to the 
+      a(href='https://static.mlh.io/docs/mlh-code-of-conduct.pdf' target='_blank') Major League Hacking Code of Conduct .
+    +list_item('Can I work on a past project?')
+      | No. All projects must be worked on from scratch at the event. You’ll have enough time to make something you can be proud of.
+    +list_item('Will there be hardware available?')
+      | Yes! Hardware will be provided! Check back later for a list of what we will have.
+
+  p.moreinfo 
+    | More questions? Email us at 
+    a(href='mailto:info@hackwcu.org' target='_self') info@hackwcu.org

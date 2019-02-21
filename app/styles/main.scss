@@ -1,0 +1,89 @@
+//libs
+$flexboxgrid-breakpoints:
+  sm 48em 46rem,
+  md 62em 61rem,
+  lg 75em 71rem !default;
+@import '~flexboxgrid-sass/flexboxgrid';
+
+// Options
+@import 'fonts';
+@import 'variables';
+@import 'mixin';
+
+// Components
+@import 'components/index';
+@import 'header';
+@import 'about';
+@import 'schedule';
+@import 'faq';
+@import 'footer';
+
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  background-color: $dark-purple;
+}
+
+p {
+  color: white;
+  font-size: 1.5em;
+  font-weight: 100;
+}
+
+section {
+  position: relative;
+  display: block;
+  overflow: none;
+  padding: 150px 50px 50px 50px;
+  
+  @include sm {
+    padding: 150px 20px 20px 20px;  
+  }
+
+  background-color: $dark-purple;
+
+  & > .content {
+  	width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+a {
+  color: $dark-gold;
+  text-decoration: none;
+}
+
+#mlh-trust-badge {
+  display:block;
+  max-width:100px;
+  min-width:60px;
+  position: absolute;
+  right:50px;
+  top:0;
+  width: 10%;
+  z-index: 10000;
+}
+
+.hide {
+  display: none;
+}
+
+@each $breakpoint in $flexboxgrid-breakpoints {
+  $name: nth($breakpoint, 1);
+  $size: nth($breakpoint, 2);
+
+  @media only screen and (max-width: $size) {
+    .hide-#{$name} {
+      display: none !important;
+    }
+
+    .show-#{$name} {
+      display: inital;
+    }
+  }
+}

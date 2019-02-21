@@ -1,0 +1,86 @@
+.schedule {
+  h3 {
+    color: white;
+    font-family: 'Loew Heavy';
+    font-size: 2.75em;
+    margin: 0;
+    text-shadow: -8px 4px rgba(black, .18);
+    text-align: left;
+  }
+
+  h4 {
+    margin: 0.2em 0 0 0;
+    color: white;
+    font-size: 2em;
+    font-weight: 100;
+    text-align: left;
+  }
+
+  .bar {
+    width: 100%;
+    height: 10px;
+    max-width: 175px;
+    background-image: url('../images/bar.svg');
+  }
+
+  @include sm {
+    .row {
+     margin-left: 20px;
+    }
+  }
+  
+  [class*="col-"] {
+    position: relative;
+  }
+
+  .bar-vertical {
+    width: 0.5em;
+    height: 30vh;
+    position: absolute;
+    top: 1em;
+    left: 0;
+    transform: translateX(-50%);
+
+    &:before {
+      content: '';
+      display: inline-block;
+      height: 100%;
+      width: 75%;
+      background-image: linear-gradient(#d96506 0%,#ed9909 50%,#d96506 100%);
+    }
+
+    &:after {
+      content: '';
+      display: inline-block;
+      height: 100%;
+      width: 25%;
+      background-image: linear-gradient(#ff890e 0%,#ffd017 50%,#ff890e 100%)
+    }
+  }
+
+  $inner-space: 10px;
+
+  .time > * {
+    width: 1.4em;
+    line-height: 0.8em;
+    padding: 18px 0 10px 0;
+    text-align: center;
+    float: right;
+    margin-right: $inner-space;
+  }
+
+  .event {
+    display: flex;
+    align-items: center;
+
+    & > * {
+      margin: 0;
+      margin-left: $inner-space;
+    }
+  }
+
+  .spacer {
+    width: 100%;
+    height: 2.5em;
+  }
+}

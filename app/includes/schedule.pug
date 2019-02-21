@@ -1,0 +1,42 @@
+mixin time(time, event)
+  .row
+    .col-xs-2.time
+      h3 #{time}
+    .col-xs-10.event
+      h4 #{event}
+
+mixin column()
+  .row
+    .col-xs-10.col-xs-offset-2
+      block
+
+mixin vertical_bar(entries)
+  - var entry_height = ((( entries * 2 ) - 1) * 2 ) + 'em;';
+  +column()
+    .bar-vertical(style='height: ' + entry_height)
+
+
+mixin schedule_group(date, day, entries)
+  .around-xs.col-md-6
+    +column(): h3 #{date}
+    +column(): .bar
+    +column(): h4 #{day}
+    .spacer
+    +vertical_bar(entries)
+    block
+
+section.schedule
+  +title('Schedule', 2)
+  .content: .row.center-xs
+    +schedule_group('3.30', 'Saturday', 5)
+      +time('12', 'Check-in Begins')
+      +time('14', 'Opening Ceremonies')
+      +time('16', 'Check-in Closes')
+      +time('18', 'Dinner')
+      +time('24', 'Midnight Snack')
+    div(style='height: 100px').show-sm
+    +schedule_group('3.31', 'Sunday', 4)
+      +time('07', 'Breakfast')
+      +time('12', 'Lunch')
+      +time('15', 'Judging Begins')
+      +time('16', 'Closing Ceremonies')

@@ -1,0 +1,43 @@
+button, a.button {
+  position: relative;
+  border: none;
+  margin-top: 1em;
+  font-size: 2em;
+  font-weight: 100;
+  width: 100%;
+  padding: 24px 0;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.1s cubic-bezier(0.4, 0, 1, 1);
+  outline: none !important;
+  box-sizing: border-box;
+
+
+  &:hover {
+    box-shadow: 0 5px #00000054;
+    transform: translateY(-2.5px);
+
+    &.outline {
+      text-shadow: 0 5px #0000004a;
+    }
+  }
+
+  &.gold {
+    @include gradient();
+  }
+
+  &.outline {
+    background: none;
+    border: 8px white solid;
+  }
+
+  &.nopad {
+    margin-top: 0.25em;
+  }
+
+  @include sm {
+    padding: 18px 0;
+  }
+}
+
