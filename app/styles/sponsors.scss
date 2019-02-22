@@ -1,0 +1,41 @@
+
+.sponsors {
+	@include sm {
+
+		.content {
+			margin-top: 6em;
+		}
+
+		.row:not(.title-sponsor) {
+			margin-top: 0 !important;
+
+		   	div {
+				margin: 1em 0;
+			}
+
+			img {
+				max-width: 70%;
+			}
+		}
+	}
+
+	.moreinfo {
+	    font-size: 1em;
+		margin-top: 3em;
+		text-align: center;
+	}
+
+	.row {
+	    margin-top: 3em;
+
+	    div {
+    	    display: flex;
+		    align-items: center;
+		    justify-content: center;
+	    }
+
+	    img {
+	    	height: 5em;
+	    }
+	}
+}

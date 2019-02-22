@@ -18,7 +18,7 @@
 
 @mixin md {
   $breakpoint: nth($flexboxgrid-breakpoints, 2);
-  $size: nth($breakpoint, 2);
+  $size: nth($breakpoint, 3);
 
   @media (min-width: $size) {
     @content;
@@ -27,9 +27,9 @@
 
 @mixin sm {
   $breakpoint: nth($flexboxgrid-breakpoints, 1);
-  $size: nth($breakpoint, 2);
+  $size: nth($breakpoint, 3s);
 
-  @media (max-width: $size) {
+  @media (max-width: 62rem) {
     @content;
   }
 }
