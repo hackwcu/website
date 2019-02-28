@@ -38,3 +38,12 @@ footer {
     color: white;
   }
 }
+
+.icon {
+  transition: all ease-in 0.15s;
+
+  &:hover {
+    text-shadow: #00000052 0px 4px;
+    transform: translateY(-4px);
+  }
+}

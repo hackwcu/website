@@ -9,12 +9,23 @@
 		.row:not(.title-sponsor) {
 			margin-top: 0 !important;
 
-		   	div {
-				margin: 1em 0;
+			$width: 80%;
+
+			a {
+				max-width: $width;
+
+				img { 
+					max-width: 100%;
+				}
 			}
 
-			img {
-				max-width: 70%;
+		   	div {
+				margin-top: 1em;
+				margin-bottom: 1em;
+		
+				& > img {
+					max-width: $width;
+				}
 			}
 		}
 	}
@@ -25,17 +36,44 @@
 		text-align: center;
 	}
 
-	.row {
-	    margin-top: 3em;
+	.title-sponsor {
+		margin: 0;
 
+		img {
+			height: 6.5em !important;
+		}
+
+		div {
+			margin-top: 0 !important;
+		}
+	}
+
+	$height: 5em;
+
+	.row {
 	    div {
     	    display: flex;
 		    align-items: center;
 		    justify-content: center;
+		    margin-top: 3em;
 	    }
 
 	    img {
-	    	height: 5em;
+	    	max-width: 100%;
+	    	height: $height;
 	    }
+
+	    .tall {
+	    	$scalar: 1em;
+	    	height: $height + (2 * $scalar);
+	    	margin-top: -$scalar;
+	    	margin-bottom: -$scalar;
+	    }
+	}
+
+	.aspect-ratio {
+		max-height: $height;
+		width: auto !important;
+		height: auto !important;
 	}
 }

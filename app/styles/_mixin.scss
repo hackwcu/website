@@ -33,3 +33,9 @@
     @content;
   }
 }
+
+@media (min-width: 48em) {
+  .col-sm-offset-0 {
+    margin-left: 0;
+  }
+}

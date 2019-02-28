@@ -85,7 +85,7 @@ const commonConfig = merge([
       }),
       new CopyPlugin([
         { from: 'files', to: 'files' },
-        { from: 'favicons/', to: 'favicons/' }
+        { from: 'meta' }
       ]),
       new FriendlyErrorsPlugin(),
       new StylelintPlugin(lintStylesOptions)

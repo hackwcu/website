@@ -1,17 +1,26 @@
+mixin sponsor(href, img, cls=null, img_cls='')
+  if cls == null
+    - cls = 'col-xs-6 col-sm-4';
+  div(class=cls)
+    a(href=href target='_blank')
+     img(class=img_cls src='images/sponsors/' + img)
+
 section.sponsors
   +title('Sponsors', 4)
   .content
-    .row.title-sponsor: .col-xs-12.col-sm-offset-4.col-sm-4: img(src='images/evolveip.svg')
+    .row.title-sponsor: .col-xs-12.col-sm-offset-3.col-sm-6: a(href='https://evolveip.net' target='_blank'): img(src='images/sponsors/evolveip.svg')
     .row
-      .col-xs-12.col-sm-4: img(src='images/github.svg')
-      .col-xs-12.col-sm-4: img(src='images/expac.svg')
-      .col-xs-12.col-sm-4: img(src='images/sei.svg')
-    .row
-      .col-xs-12.col-sm-4: img(src='images/mlh.svg')
-      .col-xs-12.col-sm-4: img(src='images/wcu.png')
-      .col-xs-12.col-sm-4: img(src='images/cottrell.svg')
-    .row
-      .col-xs-12.col-sm-offset-4.col-sm-4: img(src='images/gopuff.svg')
+      +sponsor('https://github.com/', 'github.svg')
+      +sponsor('https://expacgraphics.com/', 'expac.svg')
+      +sponsor('https://seic.com/', 'sei.svg')
+      +sponsor('https://www.agi.com/', 'agi.svg')
+      +sponsor('https://gopuff.com/', 'gopuff.svg')
+      +sponsor('http://hackp.ac/mlh-stickermule-hackathons', 'stickermule.svg')
+      +sponsor('https://www.wcupa.edu/business-publicManagement/CottrellCenter/', 'cottrell.svg')
+      +sponsor('https://www.wcupa.edu/_services/STU/sga/', 'sga.svg', null, 'tall')
+      +sponsor('https://mlh.io', 'mlh.svg')
+      +sponsor('https://www.wcupa.edu', 'wcu.png', 'col-sm-12 col-xs-6', 'aspect-ratio')
+
     p.moreinfo
      | Interested in sponsoring? 
      a(href='files/sponsorship_information_2019.pdf' target='_blank') See our sponsor sheet!

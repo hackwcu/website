@@ -33,3 +33,24 @@
     p Share the event on social media
     include socialmedia
     button.outline Close
+  #account-dialog.dialog.hide
+    .hexagon
+      i.fas.fa-user
+      svg(viewBox='0 20 300 260'): polygon(points='300,150 225,280 75,280 0,150 75,20 225,20')
+    h2 Account Settings
+
+    p
+      | Upload your resume 
+      strong or 
+      | Edit Account...
+    br
+    .calendar
+
+      a.button.outline(href='https://my.mlh.io/oauth/authorize?client_id=9c4a27c1881f7bc7ffa8fb9033aaa9a70dad84c404ff5ac22721cd481d5f587d&amp;redirect_uri=https%3A%2F%2Fhackwcu.org&amp;response_type=token&amp;scopes=email+phone_number+demographics+birthday+education+event')
+        i.fas.fa-file-alt
+        | Upload Resume
+      a.button.outline(href='https://my.mlh.io/edit' target='_blank')
+        i.fas.fa-sliders-h
+        | Settings
+    br
+    button.outline Close
