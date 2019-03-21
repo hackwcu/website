@@ -1,3 +1,4 @@
+$height: 5em;
 
 .sponsors {
 	@include sm {
@@ -25,6 +26,7 @@
 		
 				& > img {
 					max-width: $width;
+					height: $height;
 				}
 			}
 		}
@@ -48,9 +50,15 @@
 		}
 	}
 
-	$height: 5em;
-
 	.row {
+		a {
+			text-align: center;
+		}
+		.col-sm-3 img {
+			height: $height * 0.75;
+			max-width: 80%;
+		}
+
 	    div {
     	    display: flex;
 		    align-items: center;
