@@ -1,0 +1,156 @@
+@import 'variables';
+//@import url(https://fonts.googleapis.com/css?family=Exo+2:400,700|Maven+Pro:400,700|Montserrat:400,700|Muli:400,700|Noto+Sans:400,700|Raleway:400,700&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap);
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  top: 0;
+  font-size: 100%;
+}
+
+* {
+  font-family: $font-family;
+  line-height: $font-height;
+  color: white;
+}
+
+// TYPOGRAPHY
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 4.5rem;
+  color: $secondary;
+  font-family: $header-font-family;
+}
+
+h4 {
+  font-size: 1.125rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+h6 {
+  font-size: 0.875rem;
+}
+
+p {
+  font-size: 1.125rem;
+  font-weight: 200;
+  line-height: 1.8;
+}
+
+.btn {
+  display: block;
+  position: relative;
+  font-size: 2em;
+  font-weight: 100;
+  width: 100%;
+  padding: 24px 0;
+  cursor: pointer;
+  text-align: center;
+  transition: all .1s cubic-bezier(.4,0,1,1);
+  outline: none !important;
+  box-sizing: border-box;
+  border: none;
+  line-height: 1.5em;
+  box-shadow: 2px 2px rgba($accent, .5);
+
+  &:hover {
+    box-shadow: 5px 5px rgba($accent, .8);
+    transform: translateY(-2.5px);
+  }
+
+  &.primary {
+    background-color: $secondary;
+    color: $primary;
+  }
+
+  &.secondary {
+    $line-size: 8px;
+    border: $line-size solid white;
+    line-height: calc(1.5em - #{$line-size * 2});
+    text-shadow: 2px 2px rgba($accent, .8);
+
+    &:hover {
+      text-shadow: 5px 5px rgba($accent, .8);
+    }
+  }
+}
+
+.font-light {
+  font-weight: $font-weight-light;
+}
+
+.font-regular {
+  font-weight: $font-weight-regular;
+}
+
+.font-heavy {
+  font-weight: $font-weight-heavy;
+}
+
+// GRID
+.container {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media only screen and (min-width: $breakpoint-sm) {
+    width: 80%;
+  }
+
+  @media only screen and (min-width: $breakpoint-lg) {
+    width: 75%;
+    max-width: 60rem;
+  }
+}
+
+@media only screen and (max-width: $breakpoint-sm) {
+  .text-center-sm {
+    text-align: center;
+  }
+}
+
+
+@media only screen and (max-width: $breakpoint-xs) {
+  h3 {
+    font-size: 3.1rem;
+    color: $secondary;
+    font-family: $header-font-family;
+    margin: 0.5em 0;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1;
+  }
+
+  .btn {
+    $line-height: 1.2em;
+    font-size: 1.4em;
+
+    &.primary {
+      line-height: $line-height;
+    }
+
+    &.seconday {
+      $line-size: 6px;
+
+      border: $line-size solid white;
+      line-height: calc($line-height - #{$line-size * 2});
+      border: $line-size solid white;
+    }
+  }
+}

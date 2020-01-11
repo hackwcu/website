@@ -1,0 +1,99 @@
+header {
+  $border-size: 10px; 
+  $border-style: ($border-size * 2) $secondary solid;
+
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  min-height: -moz-available;
+  min-height: -webkit-fill-available;
+  min-height: fill-available;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-top: $border-style;
+  border-bottom: $border-style;
+  box-sizing: content-box;
+  background-color: $primary-dark;
+
+  * {
+    z-index: 1;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100vw;
+    bottom: 0;
+    z-index: 1;
+    border-top: $border-size rgba($secondary, .2) solid;
+    background-color: rgba($secondary, .42);
+    background-clip: content-box;
+    height: $border-size;
+    padding: $border-size 0;
+  }
+
+  &::after {
+    $size: 200px;
+    $primary-light-line: lighten(saturate($primary, 1%), 6%);
+    $primary-dark-line: darken($primary-light-line, 2%);
+
+    content: '';
+    position: absolute;
+    width: unquote('max(100vw, 100vh)');
+    height: unquote('max(200vw, 200vh)');
+    z-index: 0;
+    transform: translate(-52%) rotate(45deg);
+    background:
+      repeating-linear-gradient(
+        to left,
+        $primary-light-line ($size *  0),
+        $primary-light-line ($size *  0.186),
+        $primary-dark-line  ($size *  0.186),
+        $primary-dark-line  ($size *  0.564),
+        $primary-light-line ($size *  0.564),
+        $primary-light-line ($size *  0.75),
+        $primary            ($size * 0.75),
+        $primary            ($size * 1)
+      );
+  }
+
+  #banner {
+    position: fixed;
+    top: 0;
+    height: 200px;
+  }
+
+  #logo {
+    height: 225px;
+    margin-left: auto;
+  }
+
+  #date {
+    margin-bottom: 0;
+  }
+
+  #descriptor {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 2em;
+  }
+
+  #rambot {
+    transform: scale(2.5);
+  }
+
+  @media only screen and (max-width: $breakpoint-xs) {
+    padding-bottom: $border-size * 4;
+
+    #logo {
+      height: initial;
+      width: 100%;
+    }
+
+    #descriptor {
+      font-size: 1em;
+    }
+  }
+}

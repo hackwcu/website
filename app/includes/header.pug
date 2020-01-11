@@ -1,7 +1,14 @@
-//- In 'includes' all paths to assets should be relative to the index.pug file,
-//- like so './images/image.jpg',
-//- and not '../images/image.jpg'
-
-header
-  h1 Hello world!
-  img(src='./images/js-logo.svg' alt='js logo' width='200')
+header: .container
+  img#banner.sm-hidden(src='/images/mlh-trust-badge.4a9ccccc.svg')
+  .grid-middle
+    .col-8_sm-12.grid(data-push-right='off-1')
+      img#logo(src='/images/logo.df89a33e.svg')
+      h3#date.col-12.text-center-sm March 21 - 22
+      p#descriptor.col-12.text-center-sm Business &amp; Public Management Building
+      .grid.col-10_sm-12
+        .col-6_xs-12
+          a.btn.primary Register Now
+        .col-6_xs-12
+          a.btn.secondary Sponsor Us
+    .col-3.sm-hidden
+      img#rambot(src='/images/rambot.6733b3c2.svg')
