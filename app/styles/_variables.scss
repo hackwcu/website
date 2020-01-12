@@ -6,13 +6,6 @@ $primary-dark: darken(desaturate($primary, 2%), 2%);
 $secondary: #ffc72c;
 $accent: #b81ac2;
 
-// 1 $font-family: 'Maven Pro', sans-serif;
-//  $font-family: 'Raleway', sans-serif;
-// 1 $font-family: 'Montserrat', sans-serif;
-// 2 $font-family: 'Exo 2', sans-serif;
-//  $font-family: 'Noto Sans', sans-serif;
-//  $font-family: 'Muli', sans-serif;
-
 // BASE
 // fonts
 $header-font-family: 'Montserrat', sans-serif;
@@ -29,3 +22,4 @@ $breakpoint-xs: map-get($gl-mq-list, 'xs');
 $breakpoint-sm: map-get($gl-mq-list, 'sm');
 $breakpoint-md: map-get($gl-mq-list, 'md');
 $breakpoint-lg: map-get($gl-mq-list, 'lg');
+$border-size: 8px;

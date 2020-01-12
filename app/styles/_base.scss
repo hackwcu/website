@@ -2,29 +2,18 @@
 //@import url(https://fonts.googleapis.com/css?family=Exo+2:400,700|Maven+Pro:400,700|Montserrat:400,700|Muli:400,700|Noto+Sans:400,700|Raleway:400,700&display=swap);
 @import url(https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap);
 
-html, body {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  left: 0;
-  top: 0;
-  font-size: 100%;
-}
-
-* {
-  font-family: $font-family;
-  line-height: $font-height;
-  color: white;
-}
-
 // TYPOGRAPHY
 h1 {
   font-size: 2.5rem;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 4.5rem;
+  font-family: $header-font-family;
+  text-shadow: 5px 5px rgba(black, 0.3);
+  @extend .container;
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
 }
 
 h3 {
@@ -51,7 +40,36 @@ p {
   line-height: 1.8;
 }
 
-.btn {
+.title-wrapper {
+  $padding: 12px;
+  $outer-border: $border-size rgba(white, 0.2) solid;
+  $inner-border: $border-size $secondary solid;
+  
+  position: relative;
+  border-top: $outer-border;
+  border-bottom: $outer-border;
+  padding: $padding 0;
+  margin-top: 2em;
+  z-index: 1;
+
+  & > .background {
+    content: '';
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    width: 100%;
+    height: calc(100% - #{$padding * 2});
+    box-sizing: border-box;
+    border-top: $inner-border;
+    border-bottom: $inner-border;
+    z-index: -1;
+  }
+}
+
+button, .btn {
+  $shadow: 2px 2px rgba($accent, .5);
+  $shadow-hover: 5px 5px rgba($accent, .8);
+
   display: block;
   position: relative;
   font-size: 2em;
@@ -65,26 +83,29 @@ p {
   box-sizing: border-box;
   border: none;
   line-height: 1.5em;
-  box-shadow: 2px 2px rgba($accent, .5);
+  box-shadow: $shadow;
+  background-color: $secondary;
+  color: $primary;
 
   &:hover {
-    box-shadow: 5px 5px rgba($accent, .8);
+    box-shadow: $shadow-hover;
     transform: translateY(-2.5px);
   }
 
-  &.primary {
-    background-color: $secondary;
-    color: $primary;
-  }
+  &.outline {
+    border: $border-size solid $secondary;
+    line-height: calc(1.5em - #{$border-size * 2});
+    text-shadow: $shadow;
+    background: none;
+    color: $secondary;
 
-  &.secondary {
-    $line-size: 8px;
-    border: $line-size solid white;
-    line-height: calc(1.5em - #{$line-size * 2});
-    text-shadow: 2px 2px rgba($accent, .8);
+    &.light {
+      color: white;
+      border-color: white;
+    }
 
     &:hover {
-      text-shadow: 5px 5px rgba($accent, .8);
+      text-shadow: $shadow-hover;
     }
   }
 }
@@ -125,6 +146,10 @@ p {
 
 
 @media only screen and (max-width: $breakpoint-xs) {
+  .text-center-xs {
+    text-align: center;
+  }
+
   h3 {
     font-size: 3.1rem;
     color: $secondary;
@@ -146,7 +171,7 @@ p {
     }
 
     &.seconday {
-      $line-size: 6px;
+      $line-size: $border-size * .75;
 
       border: $line-size solid white;
       line-height: calc($line-height - #{$line-size * 2});

@@ -1,0 +1,19 @@
+
+include titlebar
+
+mixin category(text, src, filldir='')
+  .col-4_xs-12
+    .circle
+        img(src=src)
+        if filldir
+          .circle.xs-hidden.fill(class=filldir): .circle.fill(class=filldir): .circle.fill(class=filldir): .circle.fill(class=filldir)
+    button.outline #{text}
+ 
++titlebar('About', align='right').zig-zag-background
+.container#about
+  p HackWCU is a 24 hour student hackathon hosted by the West Chester Computer Science Club. Join us and over 200 students and tech professionals for weekend full of fun, innovation, and creative problem solving. You’ll enjoy tech talks, free food, and fun activities while you build innovative and exciting projects with your fellow students.
+
+  .grid#circles
+    +category('Learn', './images/learn.svg', filldir='left')
+    +category('Build', './images/build.svg')
+    +category('Connect', './images/connect.svg', filldir='right')

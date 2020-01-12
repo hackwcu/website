@@ -1,0 +1,37 @@
+mixin time(time, event)
+  p.col-2.time #{time}
+  p.col-10.event #{event}
+
+mixin underline
+  svg.underline(viewbox='0 0 183.1 10.2' class!=attributes.class)
+    path(d='M1.5 7.7a46.7 46.7 0 0 0 6.7-4.2C12.1 1 16 .8 19.8 3.3l6 3.9C29.5 9.5 33 9 36.7 6.8l5.7-3.7a9.4 9.4 0 0 1 10.4 0l6 3.9c4 2.5 7.9 2.1 11.7-.4l5.8-3.7c3.7-2 7.1-1.6 10.5.5l5.9 3.8c3.6 2.2 7.1 1.9 10.6-.2 1.7-1 3.3-2 4.9-3.2 4.3-3 8.5-3 12.7 0a47.9 47.9 0 0 0 6.4 4 8.9 8.9 0 0 0 8.7-.4c2.4-1.3 4.6-2.9 6.9-4.3 3.7-2.2 7.3-2 10.9.4l5.8 3.7a9.3 9.3 0 0 0 10.3 0c2.2-1.3 4.3-2.8 6.5-4a10.2 10.2 0 0 1 5.2-1.7')
+
+mixin schedule-group(date, day, entries)
+  .grid.schedule-group
+    .col-5_sm-12.grid-center-middle
+      .col-12.dates
+        p.date #{date}
+        p.date.shadow #{date}
+      p.col-12.day #{day}
+      +underline.primary
+      +underline.secondary
+    .col-1.grid-center.sm-hidden
+      div.bar(style={height: '60%', margin: '100% 0'})
+      div.bar(style={opacity: 0.3, height: '80%', margin: '35% 5px'})
+      div.bar(style={height: '60%', margin: '50% 0'})
+    .col-6_sm-12.grid-middle-center
+      block
+
++titlebar('Schedule').zig-zag-background
+#schedule: .container
+  +schedule-group('2.21', 'Saturday')
+    +time('13', 'Check-in Begins')
+    +time('14', 'Opening Ceremonies')
+    +time('16', 'Check-in Closes')
+    +time('18', 'Dinner')
+    +time('24', 'Midnight Snack')
+  +schedule-group('2.22', 'Sunday')
+    +time('07', 'Breakfast')
+    +time('12', 'Lunch')
+    +time('14', 'Judging Begins')
+    +time('16', 'Closing Ceremonies')

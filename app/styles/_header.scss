@@ -1,11 +1,10 @@
 header {
-  $border-size: 10px; 
+  $border-size: $border-size * 1.25;
   $border-style: ($border-size * 2) $secondary solid;
 
   position: relative;
   width: 100vw;
   min-height: 100vh;
-  min-height: -moz-available;
   min-height: -webkit-fill-available;
   min-height: fill-available;
   display: flex;
@@ -16,6 +15,10 @@ header {
   border-bottom: $border-style;
   box-sizing: content-box;
   background-color: $primary-dark;
+
+  @-moz-document url-prefix() {
+      box-sizing: border-box;
+  }
 
   * {
     z-index: 1;
@@ -41,21 +44,18 @@ header {
 
     content: '';
     position: absolute;
-    width: unquote('max(100vw, 100vh)');
-    height: unquote('max(200vw, 200vh)');
+    width: 500vw;
+    height: 500vw;
+    transform: translate(-46.25%) rotate(45deg);
+    transform-origin: right center; 
     z-index: 0;
-    transform: translate(-52%) rotate(45deg);
     background:
       repeating-linear-gradient(
         to left,
-        $primary-light-line ($size *  0),
-        $primary-light-line ($size *  0.186),
-        $primary-dark-line  ($size *  0.186),
-        $primary-dark-line  ($size *  0.564),
-        $primary-light-line ($size *  0.564),
-        $primary-light-line ($size *  0.75),
-        $primary            ($size * 0.75),
-        $primary            ($size * 1)
+        $primary-light-line ($size *  0) ($size *  0.186),
+        $primary-dark-line  ($size *  0.186) ($size *  0.564),
+        $primary-light-line ($size *  0.564) ($size *  0.75),
+        $primary            ($size * 0.75) ($size * 1),
       );
   }
 
@@ -63,6 +63,8 @@ header {
     position: fixed;
     top: 0;
     height: 200px;
+    z-index: 2;
+    display: none;
   }
 
   #logo {

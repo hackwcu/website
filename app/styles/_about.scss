@@ -1,0 +1,70 @@
+.zig-zag-background {
+  $zigzag-dark: darken($primary, 2%);
+  $zigzag-light: desaturate($primary, 18%);
+  $offset: 20px;
+
+  background:
+    linear-gradient(45deg, $zigzag-dark 17%, transparent 17%) 0 #{-50px + $offset},
+    linear-gradient(225deg, $zigzag-dark 17%, transparent 17%) 0 $offset,
+    linear-gradient(315deg, $zigzag-dark  17%, transparent 17%) 0 $offset,
+    linear-gradient(135deg, $zigzag-dark 17%, transparent 17%) 0 #{-50px + $offset},
+
+    linear-gradient(45deg, $zigzag-light 17%, transparent 17%) 100px #{-50px + $offset},
+    linear-gradient(225deg, $zigzag-light 17%, transparent 17%) 100px $offset,
+    linear-gradient(315deg, $zigzag-light  17%, transparent 17%) 100px $offset,
+    linear-gradient(135deg, $zigzag-light 17%, transparent 17%) 100px #{-50px + $offset};
+    background-size: 200px 100px;
+}
+
+#about {
+
+  #circles {
+    margin-top: 4em;
+  }
+
+  .circle {
+    $radius: 90%;
+
+    position: relative;
+    width: $radius;
+    padding-top: $radius;
+    margin: 0 auto 2em auto;
+    border: $border-size $secondary solid;
+    border-radius: 50%;
+    background-color: $primary-dark;
+    box-sizing: content;
+
+    &.fill { 
+      position: absolute;
+      top: 0;
+      width: 100%;
+      padding-top: 100%;
+      background-color: $secondary;
+      border: none;
+      margin: 0;
+
+      &.right {
+        left: calc(100% + 2.5em);
+      }
+
+      &.left {
+        right: calc(100% + 2.5em);
+      }
+    }
+
+    & > img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      transform: translate(-50%, calc(-50% - 30px));
+    }
+  }
+
+  p {
+    font-size: 2em;
+    line-height: 1.45;
+    text-align: right;
+  }
+}

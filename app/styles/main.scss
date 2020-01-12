@@ -1,9 +1,25 @@
 @import '~gridlex';
-@import 'base';
 @import 'variables';
-@import 'header';
+@import 'utils';
+@import 'base';
 
-body {
+@import 'header';
+@import 'about';
+@import 'schedule';
+
+html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  top: 0;
+  font-size: 100%;
   background-color: $primary;
+  overflow-x: hidden;
 }
 
+* {
+  font-family: $font-family;
+  line-height: $font-height;
+  color: white;
+}

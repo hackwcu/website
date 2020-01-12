@@ -1,0 +1,155 @@
+@import 'variables';
+@import 'utils';
+
+@mixin text-shadow($thickness, $color) {
+  text-shadow: -$thickness -$thickness 0 $color,  
+              $thickness -$thickness 0 $color,
+              -$thickness $thickness 0 $color,
+               $thickness $thickness 0 $color;
+
+  @supports (-webkit-text-stroke: $thickness $color) {
+    -webkit-text-stroke: $thickness $color;
+    color: transparent;
+    text-shadow: none;
+  }
+}
+
+@mixin waves($color) {
+  background-image: inline-svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 208 72"><path fill="#{$color}" d="M104 48L0 0v23l104 49 104-49V0L104 48z"/></svg>');
+}
+
+#schedule {
+  $zigzag-size: 35px;
+  display: grid;
+  position: relative;
+  background-image: url('../images/down-arrows.svg');
+  background-repeat: repeat;
+  background-size: 100px;
+  padding-bottom: $zigzag-size * 2.5;
+  margin-bottom: 4em;
+
+  &::after, &::before {
+    content: '';
+    width: 100%;
+    height: $zigzag-size;
+    position: absolute;
+    background-repeat: repeat-x;
+    background-size: 100px;
+    bottom: 0;
+  }
+
+  &::after {
+    @include waves($secondary);
+    margin-bottom: $zigzag-size;
+  }
+
+  &::before {
+    @include waves(rgba($secondary, .3));
+  }
+
+  .schedule-group {
+    margin: 1em 0 2.5em 0;
+
+    .date, .day {
+      line-height: 1;
+      margin: 0;
+      text-align: center;
+    }
+
+    .dates {
+      position: relative; 
+      padding: 0;
+
+      .date {
+        font-family: $header-font-family;
+        font-weight: bold;
+        color: $primary;
+        font-size: 12em;
+        @include text-shadow(3px, white);
+
+        &.shadow {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          opacity: 0.3;
+          margin-left: 8px;
+          @include text-shadow(3px, $secondary);
+        }
+      }
+    }
+
+    .day {
+      font-family: $header-font-family;
+      font-weight: $font-weight-light;
+      color: $secondary;
+      font-size: 4em;
+      text-transform: uppercase;
+      line-height: 0.8;
+    }
+
+    .underline {
+      width: 100%;
+      path {
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 3px;
+      }
+
+      &.primary path {
+        stroke: white;
+      }
+
+      &.secondary path {
+        stroke: $secondary;
+        opacity: 0.3;
+      }
+    }
+
+    .time, .event {
+      padding: 0;
+    }
+
+    .time {
+      @include text-shadow(1px, white);
+      font-size: 4em;
+      line-height: 1;
+      margin: 0.2em 0;
+      font-weight: bold;
+    }
+
+    .event {
+      color: $secondary;
+      font-size: 2em;
+      margin: 0.2em 0;
+      padding-left: 1em;
+      text-transform: uppercase;
+    }
+
+    .bar {
+      background-color: $secondary;
+      width: 5px;
+      height: 100%;
+    }
+
+    @media only screen and (max-width: $breakpoint-lg) {
+      .dates .date {
+        font-size: 6.5em !important;
+      }
+
+      .day {
+        font-size: 2.5em !important;
+      }
+
+      .time {
+        font-size: 2.5em;
+      }
+
+      .event {
+        font-size: 1.75em;
+        padding-left: 0.1em;
+      }
+    }
+  }
+}
