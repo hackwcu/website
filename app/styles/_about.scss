@@ -67,4 +67,10 @@
     line-height: 1.45;
     text-align: right;
   }
+
+  @media only screen and (max-width: $breakpoint-xs) {
+    p {
+      font-size: 1em;
+    }
+  }
 }

@@ -23,7 +23,9 @@ h3 {
 }
 
 h4 {
-  font-size: 1.125rem;
+  font-size: 1.8rem;
+  line-height: 1;
+  margin: 0.75em 0;
 }
 
 h5 {
@@ -138,6 +140,14 @@ button, .btn {
   }
 }
 
+
+@media only screen and (max-width: $breakpoint-md) {
+  h4 {
+    font-size: 1.25em;
+  }
+}
+
+
 @media only screen and (max-width: $breakpoint-sm) {
   .text-center-sm {
     text-align: center;
@@ -159,7 +169,7 @@ button, .btn {
 
   p {
     font-size: 1rem;
-    line-height: 1;
+    line-height: 1.5;
   }
 
   .btn {

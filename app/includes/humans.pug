@@ -1,0 +1,27 @@
+include titlebar
+
+- 
+  var humans = {
+    'Hackers': './images/hackers.svg',
+    'Creators': './images/creators.svg',
+    'Leaders': './images/leaders.svg',
+    'Builders': './images/builders.svg',
+    'Innovators': './images/innovators.svg'
+  };
++titlebar('HackWCU Humans').straight-line-background
+#humans.container
+  .wrapper
+    each _, title in humans
+      input(type='radio' name='human' value=title.toLowerCase())
+
+    #highlight
+
+    .grid#people
+      .col-12.top
+      each url, _ in humans
+        .col
+          img(src=url)
+
+    .grid#titles
+      each _, title in humans
+        .col: p= title

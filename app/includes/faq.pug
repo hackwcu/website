@@ -1,1 +1,51 @@
-+titlebar('FAQ', align='right').zig-zag-background
+mixin arrow
+  svg(class!=attributes.class xmlns='http://www.w3.org/2000/svg' viewbox='0 0 21.54 14.81')
+    path(d='M20.77.77v5.46l-10 7.82-10-7.82V.77l10 7.81 10-7.81m0-.77a.78.78 0 00-.47.16l-9.53 7.45L1.24.16A.81.81 0 00.77 0a.81.81 0 00-.34.08.78.78 0 00-.43.69v5.46a.77.77 0 00.3.61l10 7.81a.77.77 0 00.48.16h.12a.77.77 0 00.36-.16l10-7.81a.77.77 0 00.3-.61V.77a.78.78 0 00-.43-.69.84.84 0 00-.36-.08z')
+
+mixin list-item(title)
+  li.col-6_sm-12
+    input(type='checkbox', checked='')
+    h4 #{title}
+    .arrow
+      +arrow.top
+      +arrow.bottom
+    p: block
+
++titlebar('FAQ', align='right').triple-zig-zag-background
+#faq.container: ul.grid-spaceAround
+  +list-item('What is a “hackathon”?')
+    | Think of a hackathon as an invention marathon. Over the span of 1-2 days, these events bring together student programmers, designers, and more to learn, build, and share cool new technology applications. Many universities host these events annually, providing a venue for students from different schools and backgrounds to work in teams to build these platforms from scratch.
+  +list-item('Who can attend?')
+    | Any student above the age of 18 is welcome to attend HackWCU. If you have graduated in the last 12 months, you are still eligible to participate. After that, there’s plenty of non-student/highschool hackathons that exist for you to consider attending. Future events will work to permit highschoolers of any age.
+  +list-item('How much will it cost?')
+    | HackWCU is a completely free event 
+    strong registration required!
+    |  Food, drinks, and awesome swag are completely free of charge!
+  +list-item('When/where is this event?')
+    | Saturday March 30
+    sup th
+    |  to Sunday March 31
+    sup st
+    |  , 2019 in the 
+    a(href='https://goo.gl/maps/4iLyFn7rrp12' target='_blank') Business and Public Management Center
+  +list-item('Is travel reimbursed?')
+    | Unfortunately, we will not be offering any form of travel reimbursements for this event.
+  +list-item('Can I attend if I can’t code?')
+    | We will have Intro to coding workshops and much more. Mentors will also be available to help you learn and build something cool!
+  +list-item('What if I don’t have a team?')
+    | You could build something by yourself, or you could join one of our team-formation sessions to find people you want to work with. There will be a lot of others in your situation, and we’ll help with that.
+  +list-item('What should I bring?')
+    | You should bring some form of identification (driver’s license, school ID card, etc.), laptops, phones, chargers, anything you need to hack with. We also recommend that you a pillow, a sleeping bag or blanket, and toiletries.
+  +list-item('What I shouldn’t bring?')
+    | Please do not bring any power tools, weapons, drugs, or alcohol. Any participant found to be in possession of anything dangerous or illegal will be disqualified from the competition and will have to leave.
+  +list-item('Is there a Code of Conduct?')
+    | Yes! Hackers are expected to adhere to the 
+    a(href='https://static.mlh.io/docs/mlh-code-of-conduct.pdf' target='_blank') Major League Hacking Code of Conduct .
+  +list-item('Can I work on a past project?')
+    | No. All projects must be worked on from scratch at the event. You’ll have enough time to make something you can be proud of.
+  +list-item('Will there be hardware?')
+    | Yes! Hardware will be provided! Check back later for a list of what we will have.
+
+  p.col-12.moreinfo 
+    | More questions? Email us at 
+    a(href='mailto:info@hackwcu.org' target='_self') info@hackwcu.org
