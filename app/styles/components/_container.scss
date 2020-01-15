@@ -1,0 +1,14 @@
+.container {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media only screen and (min-width: $breakpoint-sm) {
+    width: 80%;
+  }
+
+  @media only screen and (min-width: $breakpoint-lg) {
+    width: 75%;
+    max-width: 60rem;
+  }
+}

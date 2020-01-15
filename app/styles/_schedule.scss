@@ -1,6 +1,3 @@
-@import 'variables';
-@import 'utils';
-
 @mixin text-shadow($thickness, $color) {
   text-shadow: -$thickness -$thickness 0 $color,  
               $thickness -$thickness 0 $color,
@@ -14,37 +11,58 @@
   }
 }
 
+.zig-zag-background {
+  $zigzag-dark: darken($primary, 2%);
+  $zigzag-light: desaturate($primary, 18%);
+  $offset: 20px;
+
+  background:
+    linear-gradient(45deg, $zigzag-dark 17%, transparent 17%) 0 #{-50px + $offset},
+    linear-gradient(225deg, $zigzag-dark 17%, transparent 17%) 0 $offset,
+    linear-gradient(315deg, $zigzag-dark  17%, transparent 17%) 0 $offset,
+    linear-gradient(135deg, $zigzag-dark 17%, transparent 17%) 0 #{-50px + $offset},
+
+    linear-gradient(45deg, $zigzag-light 17%, transparent 17%) 100px #{-50px + $offset},
+    linear-gradient(225deg, $zigzag-light 17%, transparent 17%) 100px $offset,
+    linear-gradient(315deg, $zigzag-light  17%, transparent 17%) 100px $offset,
+    linear-gradient(135deg, $zigzag-light 17%, transparent 17%) 100px #{-50px + $offset};
+    background-size: 200px 100px;
+}
+
 @mixin waves($color) {
   background-image: inline-svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 208 72"><path fill="#{$color}" d="M104 48L0 0v23l104 49 104-49V0L104 48z"/></svg>');
 }
 
 #schedule {
   $zigzag-size: 35px;
-  display: grid;
-  position: relative;
-  background-image: url('../images/down-arrows.svg');
-  background-repeat: repeat;
-  background-size: 100px;
-  padding-bottom: $zigzag-size * 2.5;
-  margin-bottom: 4em;
-
-  &::after, &::before {
-    content: '';
-    width: 100%;
-    height: $zigzag-size;
-    position: absolute;
-    background-repeat: repeat-x;
+  
+  & > .wrapper {
+    display: grid;
+    position: relative;
+    background-image: url('../images/down-arrows.svg');
+    background-repeat: repeat;
     background-size: 100px;
-    bottom: 0;
-  }
+    padding-bottom: $zigzag-size * 2.5;
+    margin-bottom: 4em;
 
-  &::after {
-    @include waves($secondary);
-    margin-bottom: $zigzag-size;
-  }
+    &::after, &::before {
+      content: '';
+      width: 100%;
+      height: $zigzag-size;
+      position: absolute;
+      background-repeat: repeat-x;
+      background-size: 100px;
+      bottom: 0;
+    }
 
-  &::before {
-    @include waves(rgba($secondary, .3));
+    &::after {
+      @include waves($secondary);
+      margin-bottom: $zigzag-size;
+    }
+
+    &::before {
+      @include waves(rgba($secondary, .3));
+    }
   }
 
   .schedule-group {
@@ -115,7 +133,8 @@
       @include text-shadow(1px, white);
       font-size: 4em;
       line-height: 1;
-      margin: 0.2em 0;
+      margin-top: 0.2em;
+      margin-bottom: 0.2em;
       font-weight: bold;
     }
 

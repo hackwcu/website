@@ -1,0 +1,11 @@
+mixin icon(href, target='blank')
+  a.col-3(target=`_${target}` href=href)
+    i.fa-envelope-square.fa-4x(class!=attributes.class)
+
+footer.grid-center
+  #icon.col-3_md-6_sm-10.grid-noGutter
+    +icon('mailto:info@hackwcu.org', group='s', target='self').fas.fa-envelope
+    +icon('twitter', 'https://twitter.com/hackwcu', target).fab.fa-twitter
+    +icon('instagram', 'https://www.instagram.com/hackwcu').fab.fa-instagram
+    +icon('github', 'https://github.com/hackwcu').fab.fa-github
+  .col-10: p © 2020 HackWCU • Made with ☕️ & 💛 in West Chester

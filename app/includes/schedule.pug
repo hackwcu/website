@@ -1,6 +1,6 @@
 mixin time(time, event)
-  p.col-2.time #{time}
-  p.col-10.event #{event}
+  p.col-2(data-push-left='off-0_sm-1_xs-0').time #{time}
+  p.col-10_sm-9_xs_10.event #{event}
 
 mixin underline
   svg.underline(viewbox='0 0 183.1 10.2' class!=attributes.class)
@@ -22,16 +22,17 @@ mixin schedule-group(date, day, entries)
     .col-6_sm-12.grid-middle-center
       block
 
-+titlebar('Schedule').zig-zag-background
-#schedule: .container
-  +schedule-group('2.21', 'Saturday')
-    +time('13', 'Check-in Begins')
-    +time('14', 'Opening Ceremonies')
-    +time('16', 'Check-in Closes')
-    +time('18', 'Dinner')
-    +time('24', 'Midnight Snack')
-  +schedule-group('2.22', 'Sunday')
-    +time('07', 'Breakfast')
-    +time('12', 'Lunch')
-    +time('14', 'Judging Begins')
-    +time('16', 'Closing Ceremonies')
+#schedule
+  +titlebar('Schedule').zig-zag-background
+  .wrapper: .container
+    +schedule-group('3.21', 'Saturday')
+      +time('13', 'Check-in Begins')
+      +time('14', 'Opening Ceremonies')
+      +time('16', 'Check-in Closes')
+      +time('18', 'Dinner')
+      +time('24', 'Midnight Snack')
+    +schedule-group('3.22', 'Sunday')
+      +time('07', 'Breakfast')
+      +time('12', 'Lunch')
+      +time('14', 'Judging Begins')
+      +time('16', 'Closing Ceremonies')

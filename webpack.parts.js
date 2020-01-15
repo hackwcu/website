@@ -209,7 +209,7 @@ exports.loadFonts = ({ include, exclude, options } = {}) => ({
     rules: [
       {
         // Capture eot, ttf, woff, and woff2
-        test: /\.(eot|ttf|woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
+        test: /.(node_modules(.+)\.svg|\.(ttf|otf|eot|woff(2)?))(\?[a-z0-9]+)?$/,
 
         include,
         exclude,

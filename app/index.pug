@@ -4,11 +4,13 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    title Document
+    include includes/meta.pug
   body
+    img#banner.md-hidden(src='./images/mlh-trust-badge.svg')
     include includes/header.pug
     include includes/about.pug
     include includes/schedule.pug
     include includes/FAQ.pug
     include includes/humans.pug
     include includes/tracks.pug
+    include includes/footer.pug

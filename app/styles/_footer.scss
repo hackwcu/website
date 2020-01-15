@@ -1,0 +1,46 @@
+footer {
+  height: 20em;
+  background-color: desaturate(darken($primary, 8%), 2%);
+  background-image: inline-svg('
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 189 52">
+    <path fill="none" stroke="#{rgba($primary, 0.2)}" stroke-miterlimit="10" stroke-width="16px" class="a" d="M0,44C36,44,62,8,95,8s59,36,95,36"/></svg> 
+  ');
+
+  background-size: 189px;
+  background-position: 20px 7px;
+
+  a {
+    text-align: center;
+    transition: all .15s ease-in;
+
+    i {
+      color: $secondary;
+    }
+
+    &:hover {
+      text-shadow: rbga(black, 0.3) 0 4px;
+      transform: translateY(-4px);
+    }
+  }
+
+  p {
+    text-align: center;
+    margin: 0;
+  }
+
+
+  &:before {
+    content: '';
+    height: 60px;
+    width: 100%;
+    display: block;
+    background: inline-svg('
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 189 60">
+          <path fill="#{$primary}" d="M0 0h190v60L95 16 0 60V0z"/>
+          <path fill="none" stroke="#{rgba($secondary, .4)}" stroke-miterlimit="10" stroke-width="8" d="M0 40C36 40 62 4 95 4s59 36 95 36"/>
+          <path fill="none" stroke="#{rgba($secondary, .8)}" stroke-miterlimit="10" stroke-width="8" d="M0 48c36 0 62-36 95-36s59 36 95 36"/>
+          <path fill="none" stroke="#{$secondary}" stroke-miterlimit="10" stroke-width="8" d="M0 56c36 0 62-36 95-36s59 36 95 36"/>
+        </svg>
+      ') repeat-x 210px;
+  }
+}

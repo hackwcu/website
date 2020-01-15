@@ -1,0 +1,115 @@
+.waves-backgroud {
+  $background-image: inline-svg('
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 71.6 17.1">
+        <path opacity=".3" fill="#{$accent}" d="M0 15v2c8.4-.1 13.3-4 18-7.7S27 2.2 34.4 2a21.2 21.2 0 019 2.2 43.1 43.1 0 017.5 5l2.7 2.2a26 26 0 0013.5 5.5l4 .1h.6v-2a43.1 43.1 0 01-4.3-.2 24 24 0 01-12.6-5l-2.6-2.1a45.5 45.5 0 00-7.9-5.3A23.3 23.3 0 0034.4 0c-8.2.2-13 4-17.6 7.7S7.8 14.8 0 15z" />
+      </svg>
+    ');
+
+  background: $background-image 0 100% repeat, $background-image 0 8px repeat;
+  background-size: 100px;
+}
+#tracks {
+  margin-bottom: 4em;
+
+  .box {
+    position: relative;
+    padding-top: calc(100% - #{$border-size * 2});
+    margin: 0 auto 2em auto;
+    border: $border-size $secondary solid;
+    border-radius: 50px;
+    box-sizing: border-box;
+
+    p {
+      text-align: center;
+      margin: 0;
+      padding: 0 10px;
+    }
+
+    .wrapper {
+      top: 0;
+      left: 0;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      padding: 10px 0;
+      box-sizing: border-box;
+      overflow: hidden;
+
+      .title {
+        flex: 0 0;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+      }
+
+      .frame {
+        $icon-size: 80px;
+
+        display: block;
+        flex: 0 0;
+        position: relative;
+        text-align: center;
+        z-index: 1;
+
+        img {
+          display: inline-block;
+          max-height: $icon-size;
+          padding: 10px 0;
+        }
+
+        &::after {
+          $circle-border-size: 4px;
+          $circle-scalar: 40px;
+
+          content: '';
+          z-index: -1;
+          width: $icon-size + $circle-scalar;
+          height: $icon-size + $circle-scalar;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          border-radius: 50%;
+          background-color: $primary-dark;
+          border: $circle-border-size $secondary solid;
+          box-shadow: 0 0 0 $circle-border-size $primary, 0 0 0 ($circle-border-size * 2) $secondary;
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      .description {
+        flex: 1 1;
+        display: flex;
+        align-items: center;
+
+      }
+    }
+
+    &.fill { 
+      position: absolute;
+      top: 0;
+      width: 100%;
+      background-color: $secondary;
+      border: none;
+      margin: 0;
+
+      &.right {
+        left: 125%;
+      }
+
+      &.left {
+        right: 125%;
+      }
+    }
+  }
+
+  .container > p {
+    font-size: 2em;
+    line-height: 1.45;
+    text-align: right;
+
+    @media only screen and (max-width: $breakpoint-xs) {
+      font-size: 1.3em;
+    }
+  }
+}

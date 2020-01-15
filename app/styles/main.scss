@@ -1,13 +1,22 @@
 @import '~gridlex';
-@import 'variables';
-@import 'utils';
-@import 'base';
+$fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import 'components/variables';
+@import 'components/utils';
+@import 'components/titlebar';
+@import 'components/button';
+@import 'components/typography';
+@import 'components/container';
 
 @import 'header';
 @import 'about';
 @import 'schedule';
 @import 'faq';
 @import 'humans';
+@import 'tracks';
+@import 'footer';
 
 html, body {
   width: 100%;

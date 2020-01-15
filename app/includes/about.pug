@@ -9,11 +9,12 @@ mixin category(text, src, filldir='')
           .circle.xs-hidden.fill(class=filldir): .circle.fill(class=filldir): .circle.fill(class=filldir): .circle.fill(class=filldir)
     button.outline #{text}
  
-+titlebar('About', align='right').zig-zag-background
-.container#about
-  p HackWCU is a 24 hour student hackathon hosted by the West Chester Computer Science Club. Join us and over 200 students and tech professionals for weekend full of fun, innovation, and creative problem solving. You’ll enjoy tech talks, free food, and fun activities while you build innovative and exciting projects with your fellow students.
+#about
+  +titlebar('About', align='right').diagonal-repeating-background
+  .container
+    p HackWCU is a 24 hour student hackathon hosted by the West Chester Computer Science Club. Join us and over 200 students and tech professionals for weekend full of fun, innovation, and creative problem solving. You’ll enjoy tech talks, free food, and fun activities while you build innovative and exciting projects with your fellow students.
 
-  .grid#circles.sm-hidden
-    +category('Learn', './images/learn.svg', filldir='left')
-    +category('Build', './images/build.svg')
-    +category('Connect', './images/connect.svg', filldir='right')
+    .grid#circles.sm-hidden
+      +category('Learn', './images/learn.svg', filldir='left')
+      +category('Build', './images/build.svg')
+      +category('Connect', './images/connect.svg', filldir='right')

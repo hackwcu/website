@@ -1,5 +1,5 @@
 @mixin vertical-dashes($color, $border-size) {
-  $dashed-image: linear-gradient($color 60%, transparent 60% 100%);
+  $dashed-image: linear-gradient($color 0 60%, transparent 60% 100%);
   $dashed-size: $border-size 30px;
 
   background-image: $dashed-image;
@@ -16,16 +16,19 @@
 .straight-line-background {
   $faded-accent: rgba($accent, 0.3);
 
-  background: repeating-linear-gradient(transparent 0 6px, $faded-accent 6px, $faded-accent 8px);
+  background: repeating-linear-gradient(transparent 0, transparent 60%, $faded-accent 60% 100%);
+  background-size: 1px 8.5px;
 }
 
 #humans {
   $padding: 15px;
-  $border-size: 2px;
+  $thin-border-size: 3px;
   $magic-spacing-unit: 100% * (195.2 / 960);
 
-  margin-bottom: 10em;
-  margin-top: 1.5em;
+  & > .container {
+    margin-bottom: 8em;
+    margin-top: 1.5em;
+  }
 
   #highlight {
     width: $magic-spacing-unit;
@@ -34,12 +37,13 @@
     height: 100%;
     border: 2px $secondary solid;
     box-sizing: border-box;
-    margin-left: -7px;
+    margin-left: -6.5px;
     z-index: 2;
     transition: left 0.25s ease-in-out;
   }
 
   .wrapper {
+    z-index: 1;
     position: relative;
 
     input[type='radio'] {
@@ -67,26 +71,37 @@
             font-weight: bold;
             color: $secondary !important;
           }
+
+          & ~ #descriptions .col-12:nth-child(#{$i}) {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.25s;
+          }
         }
       }
     }
   }
 
   #people {
+    z-index: 1;
+    background-color: $primary;
+
     .top {
-      border: $border-size $accent solid;
-      height: 5px + ($border-size * 2);
+      border: $thin-border-size $accent solid;
+      height: 5px + ($thin-border-size * 2);
       padding: 0;
     }
 
     .col {
       position: relative;
       padding: $padding;
-      @include vertical-dashes($accent, $border-size);
+      @include vertical-dashes($accent, $thin-border-size);
     }
   }
 
   #titles {
+    z-index: 1;
+    background-color: $primary;
     text-align: center;
     text-transform: uppercase;
     border: 2px $accent solid;
@@ -98,7 +113,7 @@
     .col {
       $dash-offset: 7px;
 
-      @include vertical-dashes($secondary, $border-size);
+      @include vertical-dashes($secondary, $thin-border-size);
       background-position-y: $dash-offset;
       padding-bottom: 0;
 
@@ -111,5 +126,26 @@
       margin: 0;
       transition: all 0.25s ease-in-out;
     }
+  }
+
+  #descriptions {
+    position: absolute;
+    width: 100%;
+    margin: 2em  0 0;
+
+    .col-12 {
+      z-index: -1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 0 1em;
+      border: $border-size $secondary solid;
+      transition: transform 0.25s ease-in-out;
+      transform: translateY(-135%);
+    }
+  }
+
+  .magic-text {
+    opacity: 0;
   }
 }

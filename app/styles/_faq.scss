@@ -1,9 +1,8 @@
-@import 'utils';
-
 .triple-zig-zag-background {
-  $color: rgba(black, 0.2);
+  $color: darken($primary, 2%);
+
   background: inline-svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 149 88.6"> <path fill="#{$color}" d="M149 0L74.5 33.6 0 0v13l74.4 33.5v.1h.2v-.1L149 13z"/> <path fill="#{$color}" d="M149 21L74.5 54.6 0 21v13l74.4 33.5v.1h.2v-.1L149 34z"/> <path fill="#{$color}" d="M149 42L74.5 75.6 0 42v13l74.4 33.5v.1h.2v-.1L149 55z"/> </svg>');
-  background-size: 40px;
+  background-size: 50px;
 }
 
 #faq {
@@ -11,7 +10,10 @@
   $box-size: 5px;
   $box-border-size: 1.5px;
   $arrow-width: 52px;
-  padding-top: 2.5em;
+  
+  & > .container {
+    padding-top: 2.5em;
+  }
 
   .moreinfo {
     margin-top: 3em;
@@ -68,6 +70,7 @@
     padding: 0;
 
     h4 {
+      margin: 1em 0; 
       width: calc(100% - #{$arrow-width + 5px});
     }
 
@@ -87,7 +90,7 @@
 
       .arrow {
         position: absolute;
-        top: 17px;
+        top: 25px;
         right: $question-spacing;
         width: $arrow-width;
         transform: rotateX(180deg);
@@ -124,7 +127,7 @@
 
   @media only screen and (max-width: $breakpoint-md) {
     .arrow {
-      top: 10px !important;
+      top: 15px !important;
       width: 40px !important;
     }
   }
