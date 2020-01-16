@@ -9,6 +9,7 @@ const StylelintPlugin = require('stylelint-webpack-plugin')
 const ManifestPlugin = require('webpack-manifest-plugin')
 const CleanPlugin = require('clean-webpack-plugin')
 const { StatsWriterPlugin } = require('webpack-stats-plugin')
+const CopyPlugin = require('copy-webpack-plugin');
 
 const parts = require('./webpack.parts')
 
@@ -77,6 +78,7 @@ const commonConfig = merge([
       new HtmlPlugin({
         template: './index.pug'
       }),
+      new CopyPlugin([ { from: 'meta' } ]),
       new FriendlyErrorsPlugin(),
       new StylelintPlugin(lintStylesOptions)
     ],
