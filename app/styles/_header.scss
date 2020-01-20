@@ -10,6 +10,10 @@ header {
   $border-size: $border-size * 1.25;
   $border-style: ($border-size * 2) $secondary solid;
 
+  a {
+    text-decoration: none;
+  }
+
   position: relative;
   width: 100vw;
   min-height: 100vh;

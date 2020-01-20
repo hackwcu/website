@@ -18,6 +18,7 @@ button, .btn {
   box-shadow: $shadow;
   background-color: $secondary;
   color: $primary;
+  text-decoration: none;
 
   &:hover {
     box-shadow: $shadow-hover;
