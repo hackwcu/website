@@ -10,6 +10,10 @@
   margin-top: 2em;
   z-index: 1;
 
+  a { 
+    text-decoration: none;
+  }
+
   & > .background {
     content: '';
     top: 50%;
