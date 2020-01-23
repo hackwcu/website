@@ -13,37 +13,49 @@
 
   .box {
     position: relative;
-    padding-top: calc(100% - #{$border-size * 2});
-    margin: 0 auto 2em auto;
-    border: $border-size $secondary solid;
+    max-height: 450px;
     border-radius: 50px;
-    box-sizing: border-box;
+    margin-bottom: 20px;
 
     p {
       text-align: center;
       margin: 0;
-      padding: 0 10px;
+      padding: 0 ($border-size * 2);
       line-height: 1.3em;
 
+      @media only screen and (max-width: $breakpoint-xs) {
+        font-size: 1em;
+      }
+    }
 
-
+    &::after {
+      content: '';
+      display: block;
+      padding-top: 100%;
     }
 
     .wrapper {
-      top: 0;
-      left: 0;
       position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
       display: flex;
       flex-direction: column;
-      width: 100%;
-      height: 100%;
+      height: calc(100% - #{$border-size * 2});
+      width: calc(100% - #{$border-size * 2});
       box-sizing: border-box;
+      border: $border-size #ffc72c solid;
       overflow: hidden;
+      padding: ($border-size * 2) 0;
+      border-radius: 50px;
+      max-width: 400px;
+      max-height: 400px;
 
       .title {
         flex: 0 0;
-        margin-bottom: 20px;
         text-transform: uppercase;
+        margin: 0;
       }
 
       .frame {
@@ -54,6 +66,7 @@
         position: relative;
         text-align: center;
         z-index: 1;
+        margin: 2em 0;
 
         img {
           display: inline-block;
@@ -78,14 +91,25 @@
           box-shadow: 0 0 0 $circle-border-size $primary, 0 0 0 ($circle-border-size * 2) $secondary;
           transform: translate(-50%, -50%);
         }
+
+        @media only screen and (max-width: $breakpoint-xs) {
+          margin: 1.75em 0;
+
+          img {
+            max-height: 3em !important;
+          }
+
+          &::after {
+            width: 5.5em;
+            height: 5.5em;
+          }
+        }
       }
 
       .description {
         flex: 1 1;
-        margin-top: 15px;
         display: flex;
         align-items: center;
-
       }
     }
 

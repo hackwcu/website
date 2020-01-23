@@ -8,7 +8,8 @@
   "scripts": {
     "analyze": "webpack-bundle-analyzer ./stats.json",
     "build": "webpack --env production --progress",
-    "start": "nodemon --watch webpack.config.js --exec \"webpack-dev-server --open --hot --env development\""
+    "start": "nodemon --watch webpack.config.js --exec \"webpack-dev-server --open --hot --env development\"",
+    "deploy": "npm run build && gh-pages -b master -d build --repo git@github.com:hackwcu/website-2020.git"
   },
   "repository": {
     "type": "git",

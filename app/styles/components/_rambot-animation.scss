@@ -1,0 +1,36 @@
+@mixin keyframe($animation-name, $from, $to) {
+  animation-name: #{$animation-name};
+
+  @keyframes #{$animation-name} {
+    from {
+      transform: $from;
+    }
+
+    to {
+      transform: $to;
+    }
+  }
+}
+
+.rambot {
+  position: relative;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+  transform-origin: bottom center;
+
+  &.scale {
+    @include keyframe('scale-rambot', scale(1.05), scale(1));
+  }
+
+  &.rotate {
+    animation-duration: 2.6s;
+    @include keyframe('rotate-rambot', rotate(-1deg), rotate(1deg));
+  }
+
+  &.translate {
+    animation-duration: 2.15s;
+    @include keyframe('translate-rambot', translateY(10px), translateY(60px));
+  }
+}
