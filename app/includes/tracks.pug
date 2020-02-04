@@ -9,12 +9,12 @@ mixin category(title, text, src, filldir='')
     if filldir
       .box.xs-hidden.fill(class=filldir): .box.fill(class=filldir): .box.fill(class=filldir): .box.fill(class=filldir)
  
-#tracks
+section#tracks
   +titlebar('Tracks', align='right').waves-backgroud
   .container
     p Define your path! At HackWCU, we are focused on our community and our hackers. When you arrive, discover a problem that excites you and go fix it!  Also, we sometimes bring challenges to you, our corporate-sponsored tracks to be announced on the day of our event.
 
     .grid-right
-      +category('Community', 'Technology is a powerful platform that help identify and address issues of inequality and accessibility within our communities. Work to create a solution that assists a community you care about.', './images/computers.svg', filldir='left')
+      +category('Community', 'Technology is a powerful platform that helps identify and address issues of inequality and accessibility within our communities. Work to create a solution that assists a community you care about.', './images/computers.svg', filldir='left')
       .col-1.md-hidden
-      +category('Classic', 'Making a difference in our communities depends on our experiences and backgrounds. This track gives you the freedom to tackle the issue most important to you in whatever way you wish.','./images/cube.svg', filldir='right')
+      +category('Classic', 'Making a difference in our communities depends on our experiences and backgrounds. This track gives you the freedom to tackle issues important to you in whatever way you wish.','./images/cube.svg', filldir='right')

@@ -11,7 +11,7 @@ mixin list-item(title)
       +arrow.bottom
     p: block
 
-#faq
+section#faq
   +titlebar('FAQ', align='right').triple-zig-zag-background
   .container: ul.grid-spaceAround
     +list-item('What is a “hackathon”?')
@@ -23,16 +23,16 @@ mixin list-item(title)
       strong registration required!
       |  Food, drinks, and awesome swag are completely free of charge!
     +list-item('When/where is this event?')
-      | Saturday March 30
+      | Saturday March 21
       sup th
-      |  to Sunday March 31
+      |  to Sunday March 22
       sup st
-      |  , 2019 in the 
+      |  , 2020 in the 
       a(href='https://goo.gl/maps/4iLyFn7rrp12' target='_blank') Business and Public Management Center
     +list-item('Is travel reimbursed?')
       | Unfortunately, we will not be offering any form of travel reimbursements for this event.
     +list-item('Can I attend if I can’t code?')
-      | We will have Intro to coding workshops and much more. Mentors will also be available to help you learn and build something cool!
+      | We will have intro to coding workshops and much more. Mentors will also be available to help you learn and build something cool!
     +list-item('What if I don’t have a team?')
       | You could build something by yourself, or you could join one of our team-formation sessions to find people you want to work with. There will be a lot of others in your situation, and we’ll help with that.
     +list-item('What should I bring?')
@@ -41,7 +41,7 @@ mixin list-item(title)
       | Please do not bring any power tools, weapons, drugs, or alcohol. Any participant found to be in possession of anything dangerous or illegal will be disqualified from the competition and will have to leave.
     +list-item('Is there a Code of Conduct?')
       | Yes! Hackers are expected to adhere to the 
-      a(href='https://static.mlh.io/docs/mlh-code-of-conduct.pdf' target='_blank') Major League Hacking Code of Conduct .
+      a(href='https://static.mlh.io/docs/mlh-code-of-conduct.pdf' target='_blank') Major League Hacking Code of Conduct.
     +list-item('Can I work on a past project?')
       | No. All projects must be worked on from scratch at the event. You’ll have enough time to make something you can be proud of.
     +list-item('Will there be hardware?')
