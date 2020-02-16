@@ -29,6 +29,7 @@
   .title-wrapper {
     border: 0;
     animation: slide-lines 4s linear infinite;
+    margin-bottom: 1em;
     background-size: $background-width;
     background-image: inline-svg('
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 138 217.2">
