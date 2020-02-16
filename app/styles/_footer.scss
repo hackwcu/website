@@ -3,7 +3,8 @@ footer {
   background-color: desaturate(darken($primary, 8%), 2%);
   background-image: inline-svg('
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 189 52">
-    <path fill="none" stroke="#{rgba($primary, 0.2)}" stroke-miterlimit="10" stroke-width="16px" class="a" d="M0,44C36,44,62,8,95,8s59,36,95,36"/></svg> 
+      <path fill="none" stroke="#{rgba($primary, 0.2)}" stroke-miterlimit="10" stroke-width="16px" class="a" d="M0,44C36,44,62,8,95,8s59,36,95,36"/>
+    </svg> 
   ');
 
   background-size: 189px;

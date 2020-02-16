@@ -1,5 +1,3 @@
-include titlebar
-
 mixin category(title, text, src, filldir='')
   .col-5_md-6_sm-12.box
     .wrapper
@@ -10,7 +8,7 @@ mixin category(title, text, src, filldir='')
       .box.xs-hidden.fill(class=filldir): .box.fill(class=filldir): .box.fill(class=filldir): .box.fill(class=filldir)
  
 section#tracks
-  +titlebar('Tracks', align='right').waves-backgroud
+  +title('Tracks', align='right').waves-backgroud
   .container
     p Define your path! At HackWCU, we are focused on our community and our hackers. When you arrive, discover a problem that excites you and go fix it!  Also, we sometimes bring challenges to you, our corporate-sponsored tracks to be announced on the day of our event.
 

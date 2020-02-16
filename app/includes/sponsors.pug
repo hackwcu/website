@@ -1,0 +1,25 @@
+mixin sponsor(href, img)
+  div.sponsor(class!=attributes.class): a(href=href, target='_blank')
+   img(src='images/sponsors/' + img)
+section#sponsors
+  +title('Sponsors', align='center', background=false)
+  .container
+    .grid-spaceAround
+      +sponsor('https://expacgraphics.com/', 'expac.svg').col-4_xs-12
+      +sponsor('https://vanguard.com/', 'vanguard.svg').col-4_xs-12
+      +sponsor('https://www.moleculardevices.com/', 'moleculardevices.svg').col-4_xs-12
+      +sponsor('https://seic.com/', 'sei.svg').col-4_xs-12
+      +sponsor('https://www.gravic.com/', 'gravic.svg').col-4_xs-12
+      +sponsor('http://align5.com/', 'align5.svg').col-4_xs-12
+    .grid-spaceAround
+      +sponsor('http://hackp.ac/mlh-stickermule-hackathons', 'stickermule.svg').col-4_xs-12
+      +sponsor('https://www.vertexinc.com/', 'vertex.svg').col-4_xs-12
+      +sponsor('https://ripplematch.com/', 'ripplematch.svg').col-4_xs-12
+    .grid-spaceAround
+      +sponsor('https://www.wcupa.edu/business-publicManagement/CottrellCenter/', 'cottrell.svg').col-4_xs-12
+      +sponsor('https://www.wcupa.edu/_services/STU/sga/', 'sga.svg').sga.col-4_xs-12
+      +sponsor('https://mlh.io', 'mlh.svg').col-4_xs-12
+      +sponsor('https://www.wcupa.edu', 'wcu.png').col-12
+    p.more-info
+     | Interested in sponsoring? 
+     a(href='files/sponsorship_information_2019.pdf' target='_blank') See our sponsor sheet!

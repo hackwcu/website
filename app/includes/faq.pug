@@ -12,7 +12,7 @@ mixin list-item(title)
     p: block
 
 section#faq
-  +titlebar('FAQ', align='right').triple-zig-zag-background
+  +title('FAQ', align='right').triple-zig-zag-background
   .container: ul.grid-spaceAround
     +list-item('What is a “hackathon”?')
       | Think of a hackathon as an invention marathon. Over the span of 1-2 days, these events bring together student programmers, designers, and more to learn, build, and share cool new technology applications. Many universities host these events annually, providing a venue for students from different schools and backgrounds to work in teams to build these platforms from scratch.
@@ -47,6 +47,6 @@ section#faq
     +list-item('Will there be hardware?')
       | Yes! Hardware will be provided! Check back later for a list of what we will have.
 
-    p.col-12.moreinfo 
+    p.col-12.more-info 
       | More questions? Email us at 
       a(href='mailto:info@hackwcu.org' target='_self') info@hackwcu.org

@@ -1,5 +1,6 @@
-mixin titlebar(text, align='left')
+mixin title(text, align='left', background=true)
   .title-wrapper
     - var id = text.toLowerCase().replace(/\s+/g, '-');
     a(href=`#${id}`): h2(style={'text-align': align}) #{text}
-    .background(class!=attributes.class)
+    if background
+      .background(class!=attributes.class)

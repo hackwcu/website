@@ -42,6 +42,12 @@ p {
   line-height: 1.8;
 }
 
+.more-info {
+  margin-top: 3em !important;
+  text-align: center;
+  margin-bottom: 3em;
+}
+
 @media only screen and (max-width: $breakpoint-md) {
   h4 {
     font-size: 1.25em;

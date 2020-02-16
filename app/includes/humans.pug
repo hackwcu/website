@@ -1,5 +1,3 @@
-include titlebar
-
 - 
   var humans = {
     'Hackers': { 
@@ -30,7 +28,7 @@ include titlebar
     .reduce((a, b) => a.length > b.length ? a : b);
 
 section#hackwcu-humans.sm-hidden
-  +titlebar('HackWCU Humans').straight-line-background
+  +title('HackWCU Humans').straight-line-background
   .container
     .wrapper
       each info, title in humans

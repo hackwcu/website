@@ -1,5 +1,3 @@
-include titlebar
-
 mixin category(text, src, filldir='')
   .col-4_xs-12
     .circle
@@ -9,7 +7,7 @@ mixin category(text, src, filldir='')
     button.outline #{text}
  
 section#about
-  +titlebar('About', align='right').diagonal-repeating-background
+  +title('About', align='right').diagonal-repeating-background
   .container
     p HackWCU is a 24 hour student hackathon hosted by the West Chester Computer Science Club. Join us and over 250+ students and tech professionals for weekend full of fun, innovation, and creative problem solving. You’ll enjoy tech talks, free food, and fun activities while you build innovative and exciting projects with your fellow students.
 
