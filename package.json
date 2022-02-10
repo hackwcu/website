@@ -84,6 +84,6 @@
     "@fortawesome/fontawesome-free": "^5.12.0",
     "@fortawesome/fontawesome-free-brands": "^5.0.13",
     "gridlex": "^2.7.1",
-    "node-sass": "^4.13.1"
+    "node-sass": "^7.0.0"
   }
 }
